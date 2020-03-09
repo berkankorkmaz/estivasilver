@@ -1,0 +1,78 @@
+﻿@model IEnumerable<EstivaWeb.Models.Urun>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Urunadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunKodu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunFiyati2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrendLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.N11Link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HepsiLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GittiLink)
+        </th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Urunadi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UrunKodu)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.UrunFiyati)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.UrunFiyati2)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TrendLink)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.N11Link)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HepsiLink)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GittiLink)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>

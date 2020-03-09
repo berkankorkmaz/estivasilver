@@ -1,0 +1,154 @@
+﻿@model EstivaWeb.Models.Urun
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Urun</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunKodu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunKodu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunBarkodu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunBarkodu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urunadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urunadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunMarkasi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunMarkasi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunCinsi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunCinsi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunGrami)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunGrami)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunOlcusu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunOlcusu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunDegeri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunDegeri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunFiyati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunFiyati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunCarpani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunCarpani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunResmi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunResmi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunBilgisiBir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunBilgisiBir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunBilgisiIki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunBilgisiIki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunBilgisiUc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunBilgisiUc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunBilgisiDort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunBilgisiDort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunBilgisiBes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunBilgisiBes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
