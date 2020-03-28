@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EstivaWeb</RootNamespace>
     <AssemblyName>EstivaWeb</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,16 +56,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -109,6 +108,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -127,19 +127,29 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BizeUlasinController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\PanelGirisController.cs" />
     <Compile Include="Controllers\PanelKategoriController.cs" />
     <Compile Include="Controllers\PanelUrunController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\EstivaContext.cs" />
     <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\Kullanici.cs" />
     <Compile Include="Models\Urun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\MailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\plugins\animate.css" />
@@ -219,21 +229,7 @@
     <Content Include="Content\assets\img\product\product-details-img4.jpg" />
     <Content Include="Content\assets\img\product\product-details-img5.jpg" />
     <Content Include="Content\assets\img\product\product-details-img6.jpg" />
-    <Content Include="Content\assets\img\slider\home1-slide1.jpg" />
-    <Content Include="Content\assets\img\slider\home1-slide2.jpg" />
-    <Content Include="Content\assets\img\slider\home1-slide3.jpg" />
-    <Content Include="Content\assets\img\slider\home2-slide1.jpg" />
-    <Content Include="Content\assets\img\slider\home2-slide2.jpg" />
-    <Content Include="Content\assets\img\slider\home3-slide1.jpg" />
-    <Content Include="Content\assets\img\slider\home3-slide2.jpg" />
-    <Content Include="Content\assets\img\slider\home3-slide3.jpg" />
-    <Content Include="Content\assets\img\slider\home4-slide1.jpg" />
-    <Content Include="Content\assets\img\slider\home4-slide2.jpg" />
-    <Content Include="Content\assets\img\slider\home4-slider1.jpg" />
-    <Content Include="Content\assets\img\slider\home4-slider2.jpg" />
-    <Content Include="Content\assets\img\slider\home4-slider3.jpg" />
-    <Content Include="Content\assets\img\slider\home4-slider4.jpg" />
-    <Content Include="Content\assets\img\slider\home4-slider5.jpg" />
+    <Content Include="Content\assets\img\slider\home-slider-1.jpg" />
     <Content Include="Content\assets\img\team\team_member_1.jpg" />
     <Content Include="Content\assets\img\team\team_member_2.jpg" />
     <Content Include="Content\assets\img\team\team_member_3.jpg" />
@@ -278,6 +274,7 @@
     <Content Include="Content\assets\fonts\Pe-icon-7-stroke.eot" />
     <Content Include="Content\assets\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Content\assets\fonts\Pe-icon-7-stroke.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -318,18 +315,21 @@
     <Content Include="Views\Slider\_HomeSlider3.cshtml" />
     <Content Include="Views\Slider\_HomeSlider4.cshtml" />
     <Content Include="Views\Slider\_HomeSlider5.cshtml" />
-    <Content Include="Views\Kategoriler\Kolyeler.cshtml" />
-    <Content Include="Views\Kategoriler\Küpeler.cshtml" />
-    <Content Include="Views\Kategoriler\Yüzükler.cshtml" />
-    <Content Include="Views\Kategoriler\Bileklikler.cshtml" />
-    <Content Include="Views\Kategoriler\Saatler.cshtml" />
-    <Content Include="Views\Kategoriler\Erkek.cshtml" />
+    <Content Include="Views\Kategoriler\KategoriDetay.cshtml" />
     <Content Include="Views\Slider\_HomeSlider6.cshtml" />
     <Content Include="Views\Home\_SonUrunler.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Security\Login.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Views\Menu\_UstMenu.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\BizeUlasin\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\urunler\" />
+    <Folder Include="Views\PanelGiris\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

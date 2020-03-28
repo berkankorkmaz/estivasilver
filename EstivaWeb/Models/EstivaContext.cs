@@ -10,5 +10,9 @@ namespace EstivaWeb.Models
     {
         public virtual DbSet<Urun> Uruns { get; set; }
         public virtual DbSet<Kategori> Kategoris { get; set; }
+
+        public virtual DbSet<Kullanici> Kullanicis { get; set; }
+
+        public virtual DbSet<Contact> Contacts { get; set; }
     }
 }

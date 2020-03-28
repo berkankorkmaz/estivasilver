@@ -12,33 +12,33 @@
 
             <div class="product-item col-lg-3 col-md-4 col-sm-6">
                 <figure class="product-thumb">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" data-toggle="modal" data-target="#quick_view" onclick="resimbuyut('/Content/images/urunler/@item.UrunResmi','@item.Urunadi')">
                         <img class="pri-img" src="~/Content/images/urunler/@item.UrunResmi" alt="@item.Urunadi">
                         <img class="sec-img" src="~/Content/images/urunler/@item.UrunResmi" alt="@item.Urunadi">
                     </a>
                     <!-- <div class="product-badge">
-                    @if (item.IsUrunYeni)
-                    {
-                        <div class="product-label new">
-                            <span>Yeni</span>
-                        </div>
-                    }
+                        @if (item.IsUrunYeni)
+                        {
+                            <div class="product-label new">
+                                <span>Yeni</span>
+                            </div>
+                        }
 
-                    @if (item.IsUrunIndirim)
-                    {
-                        <div class="product-label discount">
-                            <span>Indirim</span>
-                        </div>
-                    }
+                        @if (item.IsUrunIndirim)
+                        {
+                            <div class="product-label discount">
+                                <span>Indirim</span>
+                            </div>
+                        }
 
-                </div>-->
+                    </div>-->
 
 
                 </figure>
                 <div class="product-caption text-center">
 
                     <div class="product-identity">
-                        <p class="manufacturer-name"><a href="product-details.html">@item.UrunCinsi</a></p>
+                        <p class="manufacturer-name"><a href="javascript:void(0)">@item.UrunCinsi</a></p>
                     </div>
 
 
@@ -51,27 +51,37 @@
                     </div>
                     <p> Hemen Satın Al</p>
                     <div class="row">
+                        <div class="col-lg-2"> </div>
                         <div class="col-lg-2">
-                            <a href="@item.TrendLink"><img src="~/Content/assets/img/logo/trlogo.png" /></a>
+                            <a href="@item.TrendLink" target="_blank"><img src="~/Content/assets/img/logo/trlogo.png" /></a>
                         </div>
                         <div class="col-lg-2">
-                            <a href="@item.N11Link"><img src="~/Content/assets/img/logo/n11logo.png" /></a>
+                            <a href="@item.N11Link" target="_blank"><img src="~/Content/assets/img/logo/n11logo.png" /></a>
                         </div>
                         <div class="col-lg-2">
-                            <a href="@item.GittiLink"><img src="~/Content/assets/img/logo/gglogo.jpg" /></a>
+                            <a href="@item.GittiLink" target="_blank"><img src="~/Content/assets/img/logo/gglogo.jpg" /></a>
                         </div>
                         <div class="col-lg-2">
-                            <a href="@item.HepsiLink"><img src="~/Content/assets/img/logo/hblogo.jpg" /></a>
+                            <a href="@item.HepsiLink" target="_blank"><img src="~/Content/assets/img/logo/hblogo.jpg" /></a>
+                        </div>
+                        <div class="col-lg-2"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3"> </div>
+                        <div class="col-lg-2">
+                            <a href="@item.HepsiLink" target="_blank"><img src="~/Content/assets/img/logo/cslogo.jpg" /></a>
                         </div>
                         <div class="col-lg-2">
-                            <a href="https://www.instagram.com/estivajewellery/"><img src="~/Content/assets/img/logo/inslogo.png" /></a>
+                            <a href="https://www.instagram.com/estivajewellery/" target="_blank"><img src="~/Content/assets/img/logo/inslogo.png" /></a>
                         </div>
                         <div class="col-lg-2">
-                            <a href="https://api.whatsapp.com/send?phone=5497372445&text=Merhaba!%20Fiyat%20Bilgisi%20Alabilir%20miyim?"><img src="~/Content/assets/img/logo/whatlogo.png" /></a>
+                            <a href="https://api.whatsapp.com/send?phone=5497372445&text=Merhaba!%20Fiyat%20Bilgisi%20Alabilir%20miyim?" target="_blank"><img src="~/Content/assets/img/logo/whatlogo.png" /></a>
                         </div>
+                        <div class="col-lg-3"> </div>
                     </div>
                 </div>
             </div>
+
         }
         <!-- product item end -->
     </div>

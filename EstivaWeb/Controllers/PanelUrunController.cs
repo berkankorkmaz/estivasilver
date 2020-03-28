@@ -10,6 +10,8 @@ using EstivaWeb.Models;
 
 namespace EstivaWeb.Controllers
 {
+
+    [Authorize]
     public class PanelUrunController : Controller
     {
 
@@ -18,7 +20,6 @@ namespace EstivaWeb.Controllers
 
   
 
-        // GET: PanelUrun
         public ActionResult Index()
         {
             return View(db.Uruns.ToList());

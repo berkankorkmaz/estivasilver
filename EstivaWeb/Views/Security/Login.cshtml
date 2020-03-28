@@ -1,0 +1,38 @@
+﻿@using EstivaWeb.Models
+@model Kullanici
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div class="container">
+        <h2> Lütfen Giriş Yapınız</h2>
+        @ViewBag.Mesaj
+        @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+        {<div class="form-group">
+                @Html.LabelFor(m => m.Ad)
+                @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Sifre)
+                @Html.PasswordFor(m => m.Sifre, new { @class = "form-control" })
+            </div>
+
+            <button type="submit" class="btn btn-block btn-success">Giriş Yap</button>
+        }
+    </div>
+</body>
+</html>

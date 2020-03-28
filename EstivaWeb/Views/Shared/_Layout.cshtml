@@ -70,7 +70,7 @@
                                 <!-- start logo area -->
                                 <div class="col-lg-2">
                                     <div class="logo">
-                                        <a href="index.html">
+                                        <a href="/">
                                             <img src="/Content/assets/img/logo/logo.png" alt="Brand Logo">
                                         </a>
                                     </div>
@@ -79,123 +79,7 @@
                                 <!-- main menu area start -->
                                 <div class="col-lg-6 position-static">
                                     <div class="main-menu-area">
-                                        <div class="main-menu">
-                                            <!-- main menu navbar start -->
-                                            <nav class="desktop-menu">
-                                                <ul>
-                                                    <li class="active">
-                                                        <a href="index.html">Home</a>
-
-                                                    </li>
-                                                    <!-- <li class="position-static">
-                                        <a href="#">pages <i class="fa fa-angle-down"></i></a>
-                                        <ul class="megamenu dropdown">
-                                            <li class="mega-title">
-                                                <span>column 01</span>
-                                                <ul>
-                                                    <li>
-                                                        <a href="shop.html">
-                                                            shop grid left
-                                                            sidebar
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-grid-right-sidebar.html">
-                                                            shop grid right
-                                                            sidebar
-                                                        </a>
-                                                    </li>
-                                                    <li><a href="shop-list-left-sidebar.html">shop list left sidebar</a></li>
-                                                    <li><a href="shop-list-right-sidebar.html">shop list right sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-title">
-                                                <span>column 02</span>
-                                                <ul>
-                                                    <li><a href="product-details.html">product details</a></li>
-                                                    <li>
-                                                        <a href="product-details-affiliate.html">
-                                                            product
-                                                            details
-                                                            affiliate
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-variable.html">
-                                                            product details
-                                                            variable
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="product-details-group.html">
-                                                            product details
-                                                            group
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-title">
-                                                <span>column 03</span>
-                                                <ul>
-                                                    <li><a href="cart.html">cart</a></li>
-                                                    <li><a href="checkout.html">checkout</a></li>
-                                                    <li><a href="compare.html">compare</a></li>
-                                                    <li><a href="wishlist.html">wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="mega-title">
-                                                <span>column 04</span>
-                                                <ul>
-                                                    <li><a href="my-account.html">my-account</a></li>
-                                                    <li><a href="login-register.html">login-register</a></li>
-                                                    <li><a href="about-us.html">about us</a></li>
-                                                    <li><a href="contact-us.html">contact us</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="megamenu-banners d-none d-lg-block">
-                                                <a href="product-details.html">
-                                                    <img src="/Content/assets/img/banner/img1-static-menu.jpg" alt="">
-                                                </a>
-                                            </li>
-                                            <li class="megamenu-banners d-none d-lg-block">
-                                                <a href="product-details.html">
-                                                    <img src="/Content/assets/img/banner/img2-static-menu.jpg" alt="">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>-->
-                                                    <li>
-                                                        <a href="shop.html">Kategoriler <i class="fa fa-angle-down"></i></a>
-                                                        <ul class="dropdown">
-                                                            <li>
-                                                                <a href="/Kategoriler/Kolyeler">Kolyeler</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="/Kategoriler/Küpeler">Küpeler</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="/Kategoriler/Bileklikler">Bileklikler</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="/Kategoriler/Yüzükler">Yüzükler</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="/Kategoriler/Erkek">Erkek</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="/Kategoriler/Saatler">Saatler</a>
-                                                            </li>
-
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-left-sidebar.html">Blog </a>
-                                                    </li>
-                                                    <li><a href="contact-us.html">Bize Ulaşın</a></li>
-                                                </ul>
-                                            </nav>
-                                            <!-- main menu navbar end -->
-                                        </div>
+                                       @Html.Action("_UstMenu","Menu")
                                     </div>
                                 </div>
                                 <!-- main menu area end -->
@@ -204,8 +88,8 @@
                                     <div class="header-right d-flex align-items-center justify-content-xl-between justify-content-lg-end">
                                         <div class="header-search-container">
                                             <button class="search-trigger d-xl-none d-lg-block"><i class="pe-7s-search"></i></button>
-                                            <form class="header-search-box d-lg-none d-xl-block animated jackInTheBox">
-                                                <input type="text" placeholder="Search entire store hire" class="header-search-field">
+                                            <form class="header-search-box d-lg-none d-xl-block animated jackInTheBox" action="/Search/" method="get">
+                                                <input type="text" name="q" placeholder="Aranacak kelime..." class="header-search-field">
                                                 <button class="header-search-btn"><i class="pe-7s-search"></i></button>
                                             </form>
                                         </div>
@@ -276,7 +160,7 @@
                                             <a href="/">Home</a>
                                         </li>
                                         <li class="menu-item-has-children ">
-                                            <a href="#">Kategoriler
+                                            <a href="#">Kategoriler</a>
                                                 <ul class="dropdown">
                                                     <li>
                                                         <a href="#">Kolye</a>
@@ -300,16 +184,14 @@
                                                 </ul>
                                         </li>
                                         <li class="menu-item-has-children ">
-                                            <a href="#">Blog</a>
+                                            <a href="/blog">Blog</a>
                                         </li>
-                                        <li><a href="contact-us.html">Bize Ulaşın</a></li>
+                                        <li><a href="/bizeulasin">Bize Ulaşın</a></li>
                                     </ul>
                                 </nav>
                                 <!-- mobile menu navigation end -->
                             </div>
                             <!-- mobile menu end -->
-
-
                             <!-- offcanvas widget area start -->
                             <div class="offcanvas-widget-area">
                                 <div class="off-canvas-contact-widget">
@@ -345,83 +227,109 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-            <!-- footer area start -->
-            <footer class="footer-widget-area">
-                <div class="footer-top section-padding">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6">
-                                <div class="widget-item">
-                                    <div class="widget-title">
-                                        <div class="widget-logo">
-                                            <a href="/">
-                                                <img src="/Content/assets/img/logo/logo.png" alt="brand logo">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="widget-body">
-                                        <p>Estiva Silver, seçkin koleksiyonunu değerli müşterileriyle buluşturmaya devam ediyor. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="widget-item">
-                                    <h6 class="widget-title">İletişim</h6>
-                                    <div class="widget-body">
-                                        <address class="contact-block">
-                                            <ul>
-                                                <li><i class="pe-7s-home"></i> İstanbul - Turkiye </li>
-                                                <li><i class="pe-7s-mail"></i> <a href="mailto:estivasilver@gmail.com">estivasilver@gmail.com </a></li>
-                                                <li><i class="pe-7s-call"></i> <a href="tel:(+90)5497372445">(+90) 549 737 2445</a></li>
-                                            </ul>
-                                        </address>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="widget-item">
-                                    <h6 class="widget-title">Linkler</h6>
-                                    <div class="widget-body">
-                                        <ul class="info-list">
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Kategoriler</a></li>
-                                            <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Bize Ulaşın</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="widget-item">
-                                    <h6 class="widget-title">Bizi Takip Edin</h6>
-                                    <div class="widget-body social-link">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                        <a href="#"><i class="fa fa-youtube"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="copyright-text text-center">
-                                    <p>Created By <a href="#">Berkan Korkmaz</a> © 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- footer area end -->
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <!-- footer area start -->
+    <footer class="footer-widget-area">
+        <div class="footer-top section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget-item">
+                            <div class="widget-title">
+                                <div class="widget-logo">
+                                    <a href="/">
+                                        <img src="/Content/assets/img/logo/logo.png" alt="brand logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <p>Estiva Silver, seçkin koleksiyonunu değerli müşterileriyle buluşturmaya devam ediyor. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget-item">
+                            <h6 class="widget-title">İletişim</h6>
+                            <div class="widget-body">
+                                <address class="contact-block">
+                                    <ul>
+                                        <li><i class="pe-7s-home"></i> İstanbul - Turkiye </li>
+                                        <li><i class="pe-7s-mail"></i> <a href="mailto:estivasilver@gmail.com">estivasilver@gmail.com </a></li>
+                                        <li><i class="pe-7s-call"></i> <a href="tel:(+90)5497372445">(+90) 549 737 2445</a></li>
+                                    </ul>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget-item">
+                            <h6 class="widget-title">Linkler</h6>
+                            <div class="widget-body">
+                                <ul class="info-list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="#">Kategoriler</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/bizeulasin">Bize Ulaşın</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="widget-item">
+                            <h6 class="widget-title">Bizi Takip Edin</h6>
+                            <div class="widget-body social-link">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-text text-center">
+                            <p>Created By <a href="#">Berkan Korkmaz</a> © 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+    <!-- JS
+       ============================================ -->
+    <!-- Modernizer JS -->
+    <script src="/content/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <!-- jQuery JS -->
+    <script src="/content/assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <!-- Popper JS -->
+    <script src="/content/assets/js/vendor/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/content/assets/js/vendor/bootstrap.min.js"></script>
+    <!-- slick Slider JS -->
+    <script src="/content/assets/js/plugins/slick.min.js"></script>
+    <!-- Countdown JS -->
+    <script src="/content/assets/js/plugins/countdown.min.js"></script>
+    <!-- Nice Select JS -->
+    <script src="/content/assets/js/plugins/nice-select.min.js"></script>
+    <!-- jquery UI JS -->
+    <script src="/content/assets/js/plugins/jqueryui.min.js"></script>
+    <!-- Image zoom JS -->
+    <script src="/content/assets/js/plugins/image-zoom.min.js"></script>
+    <!-- Imagesloaded JS -->
+    <script src="/content/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="/content/assets/js/main.js"></script>
+
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

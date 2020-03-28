@@ -1,0 +1,34 @@
+﻿@using EstivaWeb.Models
+@model List<Kategori>
+
+@{ 
+    Layout = null;
+}
+<div class="main-menu">
+    <!-- main menu navbar start -->
+    <nav class="desktop-menu">
+        <ul>
+            <li class="active">
+                <a href="/">Home</a>
+
+            </li>
+
+            <li>
+                <a href="javascript:void(0)">Kategoriler <i class="fa fa-angle-down"></i></a>
+                <ul class="dropdown">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <a href="/Kategoriler/KategoriDetay?id=@item.Id">@item.KategoriAdi</a>
+                        </li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="/blog">Blog </a>
+            </li>
+            <li><a href="/bizeulasin">Bize Ulaşın</a></li>
+        </ul>
+    </nav>
+    <!-- main menu navbar end -->
+</div>

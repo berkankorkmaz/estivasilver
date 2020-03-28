@@ -3,6 +3,7 @@
 
 
 @{
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
     ViewBag.Title = "Create";
 }
 
@@ -97,6 +98,13 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.UrunBilgisiBir, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UrunBilgisiBir, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UrunBilgisiBir, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.UrunResmi, htmlAttributes: new { @class = "control-label col-md-2" })

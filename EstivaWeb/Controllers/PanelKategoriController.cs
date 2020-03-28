@@ -10,6 +10,7 @@ using EstivaWeb.Models;
 
 namespace EstivaWeb.Controllers
 {
+    [Authorize]
     public class PanelKategoriController : Controller
     {
         private EstivaContext db = new EstivaContext();

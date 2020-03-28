@@ -5458,6 +5458,12 @@ blockquote {
   background-color: transparent;
 }
 
+#quick_view .modal-dialog{
+    max-width:400px !important;
+}
+
+
+
 /*------ countdown style end ------*/
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   .product-details-des {

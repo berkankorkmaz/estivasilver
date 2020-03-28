@@ -10,59 +10,17 @@ namespace EstivaWeb.Controllers
     public class KategorilerController : Controller
     {
         EstivaContext db = new EstivaContext();
-        public ActionResult Kolyeler()
+
+        public ActionResult KategoriDetay(int? id)
         {
-            Kategori kat = db.Kategoris.Where(x => x.KategoriAdi == "Kolyeler").FirstOrDefault();
+            if (!id.HasValue)
+                return RedirectToAction("Index", "Home");
 
-            if (kat == null) return HttpNotFound();
+            Kategori secilenKat = db.Kategoris
+                .Include("Urunler")
+                .FirstOrDefault(x=> x.Id == id.Value);
 
-            List<Urun> urunler = kat.Urunler.ToList();
-            return View(urunler);
-        }
-        public ActionResult Küpeler()
-        {
-            Kategori kat = db.Kategoris.Where(x => x.KategoriAdi == "Küpeler").FirstOrDefault();
-
-            if (kat == null) return HttpNotFound();
-
-            List<Urun> urunler = kat.Urunler.ToList();
-            return View(urunler);
-        }
-        public ActionResult Yüzükler()
-        {
-            Kategori kat = db.Kategoris.Where(x => x.KategoriAdi == "Yüzükler").FirstOrDefault();
-
-            if (kat == null) return HttpNotFound();
-
-            List<Urun> urunler = kat.Urunler.ToList();
-            return View(urunler);
-        }
-        public ActionResult Bileklikler()
-        {
-            Kategori kat = db.Kategoris.Where(x => x.KategoriAdi == "Bileklikler").FirstOrDefault();
-
-            if (kat == null) return HttpNotFound();
-
-            List<Urun> urunler = kat.Urunler.ToList();
-            return View(urunler);
-        }
-        public ActionResult Saatler()
-        {
-            Kategori kat = db.Kategoris.Where(x => x.KategoriAdi == "Saatler").FirstOrDefault();
-
-            if (kat == null) return HttpNotFound();
-
-            List<Urun> urunler = kat.Urunler.ToList();
-            return View(urunler);
-        }
-        public ActionResult Erkek()
-        {
-            Kategori kat = db.Kategoris.Where(x => x.KategoriAdi == "Erkek").FirstOrDefault();
-
-            if (kat == null) return HttpNotFound();
-
-            List<Urun> urunler = kat.Urunler.ToList();
-            return View(urunler);
+            return View(secilenKat);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace EstivaWeb.Models
         public string UrunCarpani { get; set; }
         public DateTime UrunTarihi { get; set; }
         public string UrunResmi { get; set; }
-        public string UrunBilgisiBir { get; set; }
+        public string UrunBilgisiBir { get; set; } //cicek sepeti link
         public string UrunBilgisiIki { get; set; }
         public string UrunBilgisiUc { get; set; }
         public string UrunBilgisiDort { get; set; }
